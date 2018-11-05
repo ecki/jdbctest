@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.eckenfels.tests</groupId>
+    <artifactId>jdbctest</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
+
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://www.spdx.org/licenses/Apache-2.0</url>
+        </license>
+    </licenses>
+
+    <properties>
+        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>12.2.0.1.0</version>
+            <!-- systemPath>C:\Users\instantclient-basiclite-windows.x64-12.1.0.1.0\ojdbc6.jar</systemPath -->
+        </dependency>
+    </dependencies>
+</project>
