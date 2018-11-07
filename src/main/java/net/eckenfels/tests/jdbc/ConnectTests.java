@@ -236,7 +236,7 @@ public class ConnectTests
         // print the counts for each occurred variant
         for(Map.Entry<String, AtomicInteger> e : hash.entrySet())
         {
-            System.out.printf("%5d %s%n", e.getValue(), e.getKey());
+            System.out.printf("%5d %s%n", e.getValue().intValue(), e.getKey());
         }
     }
 
