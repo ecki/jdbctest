@@ -173,14 +173,14 @@ public class ConnectTests
 
         ConnectionInfo ci = connect(ds);
         fillInstanceInfo(ci);
-        System.out.printf("First Connection: %s  time=%.6fms   from=%s prod=%s%n", ci, (ci.duration / 1000000.0), ci.connection.getClass().getProtectionDomain().getCodeSource().toString(), ci.connection.getMetaData().getDatabaseProductName());
+        System.out.printf("First Connection: %s  time=%.4fms   from=%s prod=%s%n", ci, (ci.duration / 1000000.0), ci.connection.getClass().getProtectionDomain().getCodeSource().toString(), ci.connection.getMetaData().getDatabaseProductName());
         closeConnection(ci);
         if (ci.errorcount > 0)
             return;
 
         ci = connect(ds);
         fillInstanceInfo(ci);
-        System.out.printf("Second Connection: %s  time=%.6fms%n%n", ci, (ci.duration / 1000000.0));
+        System.out.printf("Second Connection: %s  time=%.4fms%n%n", ci, (ci.duration / 1000000.0));
         closeConnection(ci);
         if (ci.errorcount > 0)
             return;
@@ -231,7 +231,7 @@ public class ConnectTests
             sleepMS(15);
         }
 
-        System.out.printf("After %d connects: min=%.6fms avg=%.6fms max=%.6fms%n", Integer.valueOf(iterations), (min/1000000.0),(sum/iterations/1000000.0),(max/1000000.0));
+        System.out.printf("After %d connects: min=%.4fms avg=%.4fms max=%.4fms%n", Integer.valueOf(iterations), (min/1000000.0),(sum/iterations/1000000.0),(max/1000000.0));
 
         // print the counts for each occurred variant
         for(Map.Entry<String, AtomicInteger> e : hash.entrySet())
@@ -301,7 +301,7 @@ public class ConnectTests
         ci.lasterror = e.toString();
         if (first)
         {
-            System.out.println("" + e + " " + e.getErrorCode() + " " + e.getSQLState());
+            System.out.println("" + e + " code/state=" + e.getErrorCode() + "/" + e.getSQLState());
             e.printStackTrace();
             first = false;
         }
